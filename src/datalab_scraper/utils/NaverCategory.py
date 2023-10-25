@@ -18,6 +18,7 @@ class NaverCategory:
                     cid_list.append((cate_lev3['cid'], cate_lev3['name']))
         return cid_list
         
+# for test
 def main():
     cid_list = NaverCategory().get_cid_list()
     for cid, cname in cid_list:

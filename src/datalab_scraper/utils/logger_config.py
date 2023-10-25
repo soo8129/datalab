@@ -1,3 +1,4 @@
+# 로거 객체 하나로 통일시 사용
 import logging
 import logging.handlers
 
