@@ -19,8 +19,10 @@ class NaverCategory:
         return cid_list
         
 def main():
-    tmp_list = NaverCategory().get_cid_list()
-    print(tmp_list)
+    cid_list = NaverCategory().get_cid_list()
+    for cid, cname in cid_list:
+        print(cid, cname)
+    print(len(cid_list))
     
 if __name__ == '__main__':
     main()
