@@ -5,7 +5,6 @@ import sys
 import utils.logger_config
 import logging
 
-
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -42,9 +41,9 @@ def _datalab_scraper(data):
         print(f'{e} error occur')
         return None
 
-def datalab_keywords(categories, cid_start, cid_end):
+def datalab_keywords(categories):
     keyword_list = []
-    for gender, age, cid in categories[cid_start: cid_end]:
+    for gender, age, cid in categories:
         keyword_info = {
             "CID": int(cid),
             "GENDER": gender,
@@ -67,19 +66,14 @@ def datalab_keywords(categories, cid_start, cid_end):
             keywords = [rank['keyword'] for rank in data['ranks']]
             keyword_info["KEYWORD"] = keywords
             keyword_list.append(keyword_info)
+        time.sleep(0.3)
 
     return keyword_list
 
 def datalab_parser():
     logger = logging.getLogger("datalab_parser")
     categories = set_categories()
-    # keywords = network_test(categories, 0, 7)
-    if len(sys.argv) != 3:
-        print("Usage: python3 datalab_parser.py <cid_start> <cid_end>")
-        sys.exit(1)
-    cid_start = int(sys.argv[1])
-    cid_end = int(sys.argv[2])
-    keywords = datalab_keywords(categories, cid_start, cid_end)
+    keywords = datalab_keywords(categories)
     return keywords
 
 # for test
