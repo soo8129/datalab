@@ -51,6 +51,7 @@ def datalab_keywords(categories):
             "CID": int(cid),
             "GENDER": gender,
             "AGE": int(age),
+            "DATE": date_info,
             "KEYWORD": None
         }
         data = {
@@ -66,11 +67,10 @@ def datalab_keywords(categories):
         data = _datalab_scraper(data)
 
         if data:
-            keywords = [rank['keyword'] for rank in data['ranks']]
+            keywords = [{'rank': item['rank'], 'keyword': item['keyword']} for item in data['ranks']]
             keyword_info["KEYWORD"] = keywords
-            keyword_list.append(keyword_info)
+            print(keyword_info)
         time.sleep(0.3)
-
     return keyword_list
 
 def datalab_parser():
