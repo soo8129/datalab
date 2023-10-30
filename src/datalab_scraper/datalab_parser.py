@@ -4,6 +4,7 @@ import time
 import sys
 import utils.logger_config
 import logging
+from datetime import datetime, timedelta
 
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -13,6 +14,8 @@ USER_AGENT = (
 )
 
 nav_url = "https://datalab.naver.com/shoppingInsight/getCategoryKeywordRank.naver"
+
+date_info  = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
 
 def set_categories():
     #test용 카테고리
@@ -53,8 +56,8 @@ def datalab_keywords(categories):
         data = {
             "cid": cid,
             "timeUnit": "date",
-            "startDate": "2023-09-22",
-            "endDate": "2023-10-22",
+            "startDate": date_info,
+            "endDate": date_info,
             "age": age,
             "gender": gender,
             "page": 1,
