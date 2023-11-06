@@ -2,7 +2,6 @@ import requests
 import json
 import time
 import sys
-import utils.logger_config
 import logging
 from datetime import datetime, timedelta
 from utils.NaverCategory import NaverCategory
