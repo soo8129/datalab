@@ -1,5 +1,5 @@
 # logger 공통 객체
-import utils.logger_config
+import utils.Logger
 import logging
 from datalab_parser import *
 
