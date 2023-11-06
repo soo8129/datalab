@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
-with open('requirements.txt') as f:
-    requirements = f.read().splitlines()
+with open('requirements.txt', 'r', encoding='UTF-16') as f:
+    requirements = [line.strip() for line in f]
 
 setup(
     name='datalab',
@@ -10,6 +10,7 @@ setup(
     author_email='soohyeok_kim@tmax.co.kr',
     url='http://192.168.2.250:11088/fc/datalab_scraper',
     description='네이버 데이터랩 인기검색어 스크래퍼',
-    packages=find_packages(where='src', include=['datalab_scraper', 'datalab_scraper.*']),
+    packages=find_packages(where='src'),
+    package_dir={'': 'src'},
     install_requires=requirements,
 )
