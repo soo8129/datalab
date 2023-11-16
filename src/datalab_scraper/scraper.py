@@ -1,9 +1,9 @@
 # logger 공통 객체
-import utils.Logger
+import datalab_scraper.utils.Logger
 import logging
-from datalab_parser import *
+from datalab_scraper.datalab_parser import *
 
-from utils.NaverCategory import NaverCategory
+from datalab_scraper.utils.NaverCategory import NaverCategory
 
 def _datalab_scraper():
     logger = logging.getLogger("datalab_scraper")

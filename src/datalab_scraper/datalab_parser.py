@@ -4,7 +4,7 @@ import time
 import sys
 import logging
 from datetime import datetime, timedelta
-from utils.NaverCategory import NaverCategory
+from datalab_scraper.utils.NaverCategory import NaverCategory
 
 
 logger = logging.getLogger("datalab_scraper")

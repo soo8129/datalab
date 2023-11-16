@@ -16,7 +16,7 @@ setup(
     install_requires=requirements,
     entry_points={
         'console_scripts': [
-            'datalab = datalab_scraper:main'
+            'datalab = datalab_scraper.main:main'
         ]
     }
 )
